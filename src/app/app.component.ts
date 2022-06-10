@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DatatableComponent } from '@swimlane/ngx-datatable';
 import { PaginationModel } from './models/paringation.model';
+import { SearchResults } from './models/search-response.model';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent implements OnInit{
 
   // datatable parameters
   public columns = [];
-  public rows = [];
+  public rows:SearchResults[] = [];
 
   // pagination values
   public pagination: PaginationModel;
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit() {
     this.initDatatableColumns();
+    this.setPagination();
   }
 
 private setPagination(): void {
@@ -38,7 +40,6 @@ private setPagination(): void {
     pageSize: this.pageSize,
     activePage: this.currentPage,
   }
-
 }
 
   public initDatatableColumns(): void {
@@ -57,7 +58,7 @@ private setPagination(): void {
       },
       {
         prop: 'age',
-        name: 'age',
+        name: 'Age',
         sortable: false,
         draggable: false,
       },

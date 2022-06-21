@@ -26,15 +26,19 @@
     },
     {
       "id": 4,
-      "name": "Smith",
-      "email": "smith@gmail.com",
-      "gender": "male"
+      "firstName": "Celine",
+      "lastName": "Roets",
+      "email": "celine@gmail.com",
+      "gender": "female",
+      "location": "NL"
     },
     {
       "id": 5,
-      "name": "John",
-      "email": "john@gmail.com",
-      "gender": "male"
+      "firstName": "John",
+      "lastName": "Deer",
+      "email": "johny@gmail.com",
+      "gender": "male",
+      "location": "US"
     }
   ]
 }

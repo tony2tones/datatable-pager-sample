@@ -2,21 +2,27 @@
   "students": [
     {
       "id": 1,
-      "name": "Jack",
+      "firstName": "Tony",
+      "lastName": "Jack",
       "email": "jack@gmail.com",
-      "gender": "male"
+      "gender": "male",
+      "location": "CPT"
     },
     {
       "id": 2,
-      "name": "Peter",
-      "email": "peter@gmail.com",
-      "gender": "male"
+      "firstName": "Peter",
+      "lastName": "Jonesy",
+      "email": "Jonesy@gmail.com",
+      "gender": "male",
+      "location": "DBN"
     },
     {
       "id": 3,
-      "name": "Mary",
+      "firstName": "Mary",
+      "lastName": "Marques",
       "email": "mary@gmail.com",
-      "gender": "female"
+      "gender": "female",
+      "location": "CH"
     },
     {
       "id": 4,

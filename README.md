@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 To add to this project it will be using ngx datatables and with the datatable-pager for client side pagination.
+In addition to cater for the payloads I will be using json-server to send the db.json payload to the UI.
 
 ## Development server
 

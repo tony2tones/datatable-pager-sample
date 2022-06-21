@@ -3,6 +3,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { DbService } from './db.services';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,9 +13,10 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     NgxDatatableModule,
+    HttpClientModule,
     
   ],
-  providers: [],
+  providers: [DbService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

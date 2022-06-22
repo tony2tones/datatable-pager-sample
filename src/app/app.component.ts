@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DatatableComponent } from '@swimlane/ngx-datatable';
 import { DbService } from './db.services';
 import { PaginationModel } from './models/paringation.model';
-import { SearchResults } from './models/search-response.model';
+import { Students } from './models/search-response.model';
 
 @Component({
   selector: 'app-root',
@@ -16,13 +16,13 @@ export class AppComponent implements OnInit {
 
   // datatable parameters
   public columns = [];
-  public rows: SearchResults[] = [];
+  public rows: Students[] = [];
 
   // pagination values
   public pagination: PaginationModel;
   public currentPage: number = 1;
   public offset: number = 1;
-  public pageSize: number = 10;
+  public pageSize: number = 5;
 
   // PageChange values
   public pageSizeLimits: number[] = [5, 10, 20, 50];
@@ -50,13 +50,22 @@ export class AppComponent implements OnInit {
 
   public getStudentData() {
     console.log('HAS THIS BEEN TRIGGERED ');
-    this.dbService.getStudents().subscribe((students) => {
+    this.dbService.getStudents().subscribe((students:Students[]) => {
       console.log('WHAT IS THIS ', students);
+      this.rows = students;
+
     });
   }
 
   public initDatatableColumns(): void {
     this.columns = [
+      {
+        prop: 'id',
+        name: 'id',
+        sortable: false,
+        display: false,
+        draggable: false,
+      },
       {
         prop: 'firstName',
         name: 'First name',
@@ -70,8 +79,14 @@ export class AppComponent implements OnInit {
         draggable: false,
       },
       {
-        prop: 'age',
-        name: 'Age',
+        prop: 'email',
+        name: 'Email',
+        sortable: false,
+        draggable: false,
+      },
+      {
+        prop: 'gender',
+        name: 'Gender',
         sortable: false,
         draggable: false,
       },

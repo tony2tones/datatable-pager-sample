@@ -39,6 +39,22 @@
       "email": "johny@gmail.com",
       "gender": "male",
       "location": "US"
+    },
+    {
+      "id": 6,
+      "firstName": "Celine",
+      "lastName": "Roets",
+      "email": "celine@gmail.com",
+      "gender": "female",
+      "location": "NL"
+    },
+    {
+      "id": 7,
+      "firstName": "John",
+      "lastName": "Deer",
+      "email": "johny@gmail.com",
+      "gender": "male",
+      "location": "US"
     }
   ]
 }

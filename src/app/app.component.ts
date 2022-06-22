@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   public pageSizeLimits: number[] = [5, 10, 20, 50];
 
   // Fake API response
-  public totalSearchResults: number = 0;
+  public totalResults: number = 0;
 
   constructor(private dbService: DbService) { }
 
@@ -41,20 +41,25 @@ export class AppComponent implements OnInit {
 
 
   private setPagination(): void {
+    console.log('triggered');
     this.pagination = {
-      totalItems: this.totalSearchResults,
+      totalItems: this.totalResults,
       pageSize: this.pageSize,
       activePage: this.currentPage,
     }
   }
 
   public getStudentData() {
-    console.log('HAS THIS BEEN TRIGGERED ');
     this.dbService.getStudents().subscribe((students:Students[]) => {
       console.log('WHAT IS THIS ', students);
       this.rows = students;
+      this.totalResults = this.rows.length;
 
     });
+  }
+
+  public onPageChange(page:number) {
+    console.log('THE PAGE ',page);
   }
 
   public initDatatableColumns(): void {
@@ -98,5 +103,4 @@ export class AppComponent implements OnInit {
       },
     ]
   }
-
 }
